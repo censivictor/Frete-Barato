@@ -901,46 +901,73 @@
   width: 100%;
   text-align: center;
 }
-    .faq {
-      position: relative;
-      padding: 6rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-      z-index: 5;
-      background: rgba(0, 15, 159, 0.1);
-    }
-    .faq-item {
-      margin-bottom: 1.5rem;
-    }
-    .faq-question {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #fff;
-      margin-bottom: 0.5rem;
-      cursor: pointer;
-      position: relative;
-    }
-    .faq-question::after {
-      content: '+';
-      position: absolute;
-      right: 0;
-      transition: transform 0.3s ease;
-    }
-    .faq-item.active .faq-question::after {
-      content: '-';
-      transform: rotate(180deg);
-    }
-    .faq-answer {
-      font-size: 0.95rem;
-      color: #e0e7ff;
-      line-height: 1.6;
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out;
-    }
-    .faq-item.active .faq-answer {
-      max-height: 200px;
-    }
+.faq {
+  position: relative;
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 5;
+  background: linear-gradient(135deg, rgba(0, 30, 180, 0.25), rgba(0, 0, 60, 0.25));
+  border: 1px solid rgba(0, 80, 255, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(0, 40, 255, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.faq-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+  background: rgba(0, 80, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 100, 255, 0.1);
+}
+
+.faq-question {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  position: relative;
+  padding-right: 1.5rem;
+}
+
+.faq-question::after {
+  content: '+';
+  position: absolute;
+  right: 0;
+  font-size: 1.5rem;
+  color: #00aaff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+  content: '-';
+  transform: rotate(180deg);
+  color: #66ccff;
+}
+
+.faq-answer {
+  font-size: 1rem;
+  color: #cfd9ff;
+  line-height: 1.7;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 400px;
+  opacity: 1;
+  margin-top: 0.5rem;
+}
     .cta {
       position: relative;
       padding: 0rem 2rem;
