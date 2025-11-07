@@ -392,15 +392,14 @@
   padding: 6rem 2rem;
   max-width: 1400px;
   margin: 0 auto;
-  z-index: 5;
 }
 
 .section-title {
-  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
   text-align: center;
   margin-bottom: 1rem;
-  letter-spacing: -1px;
+  color: #fff;
 }
 
 .section-subtitle {
@@ -411,74 +410,109 @@
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  font-weight: 400;
 }
 
 .features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-  gap: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
 }
 
 .feature-item {
   display: flex;
-  flex-direction: column;
-  background: rgba(0, 15, 159, 0.08);
-  border-radius: 16px;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, rgba(0, 15, 159, 0.2), rgba(0, 32, 92, 0.3));
+  border: 1px solid rgba(0, 15, 159, 0.25);
+  border-radius: 20px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(0, 15, 159, 0.15);
+  padding: 3rem;
+  gap: 3rem;
 }
 
-.feature-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0, 15, 159, 0.2);
+.feature-item.reverse {
+  flex-direction: row-reverse;
+}
+
+.feature-text {
+  flex: 1;
+  color: #fff;
+}
+
+.feature-text h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.feature-text p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: #dbeafe;
+}
+
+.feature-tags {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.feature-tags span {
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  color: #cbd5e1;
+}
+
+.feature-btn {
+  display: inline-block;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.feature-btn:hover {
+  background: linear-gradient(90deg, #1e40af, #2563eb);
+}
+
+.feature-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .feature-image img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
-  display: block;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 15, 159, 0.3);
+  transition: transform 0.3s ease;
 }
 
-.feature-text {
-  padding: 2rem;
+.feature-item:hover .feature-image img {
+  transform: translateY(-5px);
 }
 
-.feature-text h3 {
-  font-size: 1.3rem;
-  font-weight: 600;
-  margin-bottom: 0.8rem;
-  color: #fff;
-}
-
-.feature-text p {
-  color: #e2e8f0;
-  line-height: 1.6;
-  font-size: 0.95rem;
-}
-
-@media (min-width: 768px) {
+@media (max-width: 900px) {
   .feature-item {
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
   }
-
-  .feature-image {
-    flex: 1;
-    max-width: 45%;
+  .feature-item.reverse {
+    flex-direction: column;
   }
-
-  .feature-text {
-    flex: 1;
-    padding: 2rem 2.5rem;
-  }
-
   .feature-image img {
-    height: 100%;
+    max-width: 100%;
   }
 }
+
     .map-section {
       position: relative;
       padding: 6rem 2rem;
@@ -1154,45 +1188,41 @@
   <p class="section-subtitle">Tudo que você precisa para gerenciar fretes com eficiência e economia</p>
 
   <div class="features-grid">
-    <div class="feature-item reveal">
-      <div class="feature-image">
-        <img src="img/economia.jpg" alt="Economia Garantida">
-      </div>
+    
+    <!-- BLOCO 1 -->
+    <div class="feature-item">
       <div class="feature-text">
-        <h3>Economia Garantida</h3>
-        <p>Compare tarifas de múltiplas transportadoras e economize até 50% em seus fretes sem compromissos.</p>
+        <h3>Gestão de Pedidos</h3>
+        <p>Centralize o controle da sua operação de e-commerce. Acompanhe pedidos, ocorrências e rastreamentos em tempo real em um único painel.</p>
+        <div class="feature-tags">
+          <span>Pedidos</span>
+          <span>Rastreamento</span>
+          <span>Ocorrências</span>
+        </div>
+        <a href="#" class="feature-btn">Saiba mais</a>
+      </div>
+      <div class="feature-image">
+        <img src="img/pedidos.png" alt="Gestão de Pedidos">
       </div>
     </div>
 
-    <div class="feature-item reveal">
-      <div class="feature-image">
-        <img src="img/rastreamento.jpg" alt="Rastreamento em Tempo Real">
-      </div>
-      <div class="feature-text">
-        <h3>Rastreamento em Tempo Real</h3>
-        <p>Acompanhe cada etapa do envio com integração completa das principais transportadoras do Brasil.</p>
-      </div>
-    </div>
-
-    <div class="feature-item reveal">
-      <div class="feature-image">
-        <img src="img/integracao.jpg" alt="Integração Rápida">
-      </div>
-      <div class="feature-text">
-        <h3>Integração Rápida</h3>
-        <p>Conecte com às transportadoras em minutos. API simples, documentação completa e suporte dedicado.</p>
-      </div>
-    </div>
-
-    <div class="feature-item reveal">
-      <div class="feature-image">
-        <img src="img/dashboard.jpg" alt="Dashboard Inteligente">
-      </div>
+    <!-- BLOCO 2 -->
+    <div class="feature-item reverse">
       <div class="feature-text">
         <h3>Dashboard Inteligente</h3>
-        <p>Visualize todas as operações em um único painel. Relatórios detalhados e análises em tempo real.</p>
+        <p>Visualize métricas, acompanhe transportadoras e otimize sua logística com relatórios dinâmicos e insights automatizados.</p>
+        <div class="feature-tags">
+          <span>Relatórios</span>
+          <span>Análises</span>
+          <span>Performance</span>
+        </div>
+        <a href="#" class="feature-btn">Saiba mais</a>
+      </div>
+      <div class="feature-image">
+        <img src="img/dashboard.png" alt="Dashboard Inteligente">
       </div>
     </div>
+
   </div>
 </section>
 
