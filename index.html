@@ -812,32 +812,34 @@
 }
 .pricing-badge {
   position: absolute;
-  top: 20px;
-  right: -60px;
-  width: 200px;
-  text-align: center;
-  transform: rotate(45deg);
-  background: linear-gradient(135deg, #00205C, #000F9F);
-  color: #fff;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 6px 0;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #00205C, #0010FF);
+  clip-path: polygon(100% 0, 0 0, 100% 100%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-top: 12px;
+  padding-right: 18px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
   z-index: 10;
   pointer-events: none;
 }
-.pricing-badge::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0));
-  mix-blend-mode: overlay;
-  pointer-events: none;
+.pricing-badge span {
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.7rem;
+  text-align: right;
+  text-transform: uppercase;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
 }
 .pricing-card:hover .pricing-badge {
-  background: linear-gradient(135deg, #0033CC, #0010FF);
+  background: linear-gradient(135deg, #0033CC, #89DC65);
   box-shadow: 0 0 15px rgba(137, 220, 101, 0.4);
   transition: all 0.4s ease;
 }
@@ -1540,7 +1542,9 @@
       </div>
   
       <div class="pricing-card featured reveal">
-        <div class="pricing-badge">Mais Popular</div>
+        <div class="pricing-badge">
+          <span>Mais Popular</span>
+        </div>
         <h3>TMS</h3>
         <div class="pricing-price-container">
           <span class="pricing-price">R$ 590,00</span>
