@@ -551,6 +551,7 @@
     .map-content h3 {
       font-size: 2rem;
       font-weight: 700;
+      text-align: left;
       line-height: 1.2;
       letter-spacing: -1px;
     }
@@ -903,37 +904,32 @@
 }
 .faq {
   position: relative;
-  padding: 6rem 2rem;
-  max-width: 1200px;
+  padding: 4rem 2rem;
+  max-width: 900px;
   margin: 0 auto;
   z-index: 5;
-  background: linear-gradient(135deg, rgba(0, 30, 180, 0.25), rgba(0, 0, 60, 0.25));
-  border: 1px solid rgba(0, 80, 255, 0.2);
-  border-radius: 20px;
-  box-shadow: 0 0 25px rgba(0, 40, 255, 0.15);
-  backdrop-filter: blur(10px);
+  background: rgba(0, 10, 60, 0.25);
+  border-radius: 16px;
+  border: 1px solid rgba(0, 80, 255, 0.1);
+  box-shadow: 0 0 20px rgba(0, 60, 255, 0.1);
+  backdrop-filter: blur(8px);
 }
 
 .faq-item {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 12px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 1rem 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .faq-item:hover {
-  background: rgba(0, 80, 255, 0.1);
-  box-shadow: 0 0 20px rgba(0, 100, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
 }
 
 .faq-question {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 600;
   color: #fff;
-  margin-bottom: 0.5rem;
-  cursor: pointer;
   position: relative;
   padding-right: 1.5rem;
 }
@@ -942,32 +938,34 @@
   content: '+';
   position: absolute;
   right: 0;
-  font-size: 1.5rem;
-  color: #00aaff;
+  font-size: 1.2rem;
+  color: #66aaff;
   transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .faq-item.active .faq-question::after {
   content: '-';
   transform: rotate(180deg);
-  color: #66ccff;
+  color: #99ccff;
 }
 
 .faq-answer {
-  font-size: 1rem;
-  color: #cfd9ff;
-  line-height: 1.7;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease-out, opacity 0.3s ease;
   opacity: 0;
+  color: #dbe2ff;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  padding-top: 0;
 }
 
 .faq-item.active .faq-answer {
-  max-height: 400px;
+  max-height: 200px;
   opacity: 1;
-  margin-top: 0.5rem;
+  padding-top: 0.5rem;
 }
+
     .cta {
       position: relative;
       padding: 0rem 2rem;
@@ -1621,24 +1619,59 @@
     </div>
   </section>
   
-  <section class="faq" id="faq">
-    <h2 class="section-title">Perguntas Frequentes</h2>
-    <p class="section-subtitle">Tudo que você precisa saber sobre nossos serviços</p>
-    <div class="faq-item reveal">
-      <div class="faq-question">Como funciona o cálculo de frete?</div>
-      <div class="faq-answer">O cálculo de frete é baseado no peso, volume, distância e transportadora escolhida. Nossa plataforma compara as melhores opções automaticamente.</div>
+<section class="faq" id="faq">
+  <h2 class="section-title">Perguntas Frequentes</h2>
+  <p class="section-subtitle">Clique para ver as respostas</p>
+
+  <div class="faq-item">
+    <div class="faq-question">Como funciona o cálculo de frete?</div>
+    <div class="faq-answer">
+      O cálculo é feito com base em peso, volume, distância e transportadora. A plataforma compara automaticamente as melhores opções.
     </div>
-    <div class="faq-item reveal">
-      <div class="faq-question">Tenho atendimento humanizado?</div>
-      <div class="faq-answer">A Frete Barato tem como diferencial o atendimento, centralize e comunique-se com às transportadoras do nosso HUB diretamente pelo painel. Garantimos agilidade
-        organização e controle.
-      </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Posso integrar minha loja?</div>
+    <div class="faq-answer">
+      Sim! Integramos com plataformas como Magazord, Shopify, Tray e outras via API ou conectores diretos.
     </div>
-    <div class="faq-item reveal">
-      <div class="faq-question">Posso integrar com minha loja?</div>
-      <div class="faq-answer">Sim, oferecemos integração via API com plataformas como Magazord, Shopify, LojaIntegrada e outras. Consulte nosso comercial para detalhes.</div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Há custo para integração?</div>
+    <div class="faq-answer">
+      Não. A integração com plataformas e transportadoras homologadas é gratuita e rápida.
     </div>
-  </section>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">O suporte é humanizado?</div>
+    <div class="faq-answer">
+      Sim, oferecemos atendimento via WhatsApp, chat e e-mail, com especialistas prontos para te ajudar.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Posso acompanhar rastreamentos?</div>
+    <div class="faq-answer">
+      Acompanhe todas as entregas em tempo real no painel, com atualização automática das transportadoras.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Funciona com qualquer transportadora?</div>
+    <div class="faq-answer">
+      Sim, trabalhamos com todas as principais transportadoras do Brasil e também fazemos integrações personalizadas.
+    </div>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">Tem limite de pedidos por mês?</div>
+    <div class="faq-answer">
+      Não há limite! Você pode gerenciar desde pequenas até grandes operações sem custo adicional.
+    </div>
+  </div>
+</section>
 
   <section class="cta" id="cta">
   <div class="cta-content">
@@ -1744,6 +1777,18 @@
         e.preventDefault();
       });
     });
+
+    document.querySelectorAll('.faq-question').forEach(question => {
+  question.addEventListener('click', () => {
+    const item = question.parentElement;
+    const active = document.querySelector('.faq-item.active');
+    if (active && active !== item) {
+      active.classList.remove('active');
+    }
+    item.classList.toggle('active');
+  });
+});
+
   </script>
 </body>
 </html>
