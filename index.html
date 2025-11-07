@@ -814,34 +814,41 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   background: linear-gradient(135deg, #00205C, #0010FF);
   clip-path: polygon(100% 0, 0 0, 100% 100%);
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding-top: 12px;
-  padding-right: 18px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
   z-index: 10;
   pointer-events: none;
 }
 .pricing-badge span {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-45deg) translate(10px, -5px);
+  transform-origin: center;
   color: #fff;
   font-weight: 800;
-  font-size: 0.7rem;
-  text-align: right;
+  font-size: 0.8rem;
   text-transform: uppercase;
-  line-height: 1.1;
   letter-spacing: 1px;
-  writing-mode: vertical-rl;
-  transform: rotate(180deg);
+  line-height: 1.1;
 }
 .pricing-card:hover .pricing-badge {
   background: linear-gradient(135deg, #0033CC, #89DC65);
   box-shadow: 0 0 15px rgba(137, 220, 101, 0.4);
   transition: all 0.4s ease;
+}
+.pricing-badge span span:first-child {
+  order: 1;
+}
+.pricing-badge span span:last-child {
+  order: 2;
 }
 .pricing-card h3 {
   font-size: 24px;
