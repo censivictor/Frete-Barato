@@ -811,35 +811,24 @@
   animation: borderRun 2s linear forwards;
 }
 .pricing-badge {
+  text-transform: uppercase;
   position: absolute;
-  top: -40px;
+  top: 30px;
   right: -40px;
-  width: 160px;
-  height: 160px;
+  width: 170px;
+  height: 30px;
   transform: rotate(45deg);
   background: linear-gradient(135deg, #00205C 0%, #0010FF 100%);
   box-shadow: 0 6px 18px rgba(0,0,0,0.35);
   z-index: 12;
+  font-size: 11px;
+  margin: auto;
   pointer-events: none;
   display: flex;
+  font-weight: 700;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
   overflow: visible;
-}
-
-.pricing-badge .badge-text {
-  transform: rotate(-45deg);
-  color: #fff;
-  font-weight: 800;
-  font-size: 0.72rem;
-  letter-spacing: 0.8px;
-  text-align: center;
-  line-height: 1.05;
-  text-transform: uppercase;
-  padding: 6px 4px;
-  white-space: nowrap;
-  -webkit-font-smoothing: antialiased;
 }
 
 .pricing-card:hover .pricing-badge {
