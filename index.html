@@ -812,16 +812,34 @@
 }
 .pricing-badge {
   position: absolute;
-  top: -5px;
-  right: 20px;
+  top: 20px;
+  right: -60px;
+  width: 200px;
+  text-align: center;
+  transform: rotate(45deg);
   background: linear-gradient(135deg, #00205C, #000F9F);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
+  color: #fff;
   font-size: 0.75rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
+  padding: 6px 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  pointer-events: none;
+}
+.pricing-badge::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0));
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+.pricing-card:hover .pricing-badge {
+  background: linear-gradient(135deg, #0033CC, #0010FF);
+  box-shadow: 0 0 15px rgba(137, 220, 101, 0.4);
+  transition: all 0.4s ease;
 }
 .pricing-card h3 {
   font-size: 24px;
